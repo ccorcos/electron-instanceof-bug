@@ -6,7 +6,7 @@
 // process.
 
 // MyValue class from Preload
-const MyValueFromPreload = window['MyValue']
+const MyValueFromPreload = window['MyValueFromPreload']
 
 const fromMain = window['fromMain']
 console.log(

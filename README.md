@@ -26,7 +26,11 @@ renderer:Date instanceof preload:Date true
 ## Steps to reproduce
 
 ```
+git clone https://github.com/ccorcos/electron-instanceof-bug
+cd electron-instanceof-bug
 npm install
 npm run build
 npm start
 ```
+
+Files a bug here: https://github.com/electron/electron/issues/27736
