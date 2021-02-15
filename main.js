@@ -7,6 +7,10 @@ ipcMain.on('getMyValue', (event) => {
   event.returnValue = new MyValue(1)
 })
 
+ipcMain.on('getDate', (event) => {
+  event.returnValue = new Date()
+})
+
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({

@@ -17,3 +17,7 @@ const { MyValue } = require('./shared')
 window['fromMain'] = ipcRenderer.sendSync('getMyValue')
 window['fromPreload'] = new MyValue(1)
 window['MyValue'] = MyValue
+
+window['fromMainDate'] = ipcRenderer.sendSync('getDate')
+window['fromPreloadDate'] = new Date()
+window['PreloadDate'] = Date
