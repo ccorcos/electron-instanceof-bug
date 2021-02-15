@@ -5,11 +5,25 @@
 // selectively enable features needed in the rendering
 // process.
 
-const MyValue = window['MyValue']
+const MyValueFromPreload = window['MyValue']
 const fromMain = window['fromMain']
 const fromPreload = window['fromPreload']
-const fromRenderer = new MyValue(1)
+const fromRendererUsingPreload = new MyValueFromPreload(1)
 
+console.log('fromMain', fromMain instanceof MyValueFromPreload, fromMain)
+console.log(
+  'fromPreload',
+  fromPreload instanceof MyValueFromPreload,
+  fromPreload
+)
+console.log(
+  'fromRendererUsingPreload',
+  fromRendererUsingPreload instanceof MyValueFromPreload,
+  fromRendererUsingPreload
+)
+
+const { MyValue } = require('./shared')
+const fromRenderer = new MyValue(1)
 console.log('fromMain', fromMain instanceof MyValue, fromMain)
 console.log('fromPreload', fromPreload instanceof MyValue, fromPreload)
 console.log('fromRenderer', fromRenderer instanceof MyValue, fromRenderer)
