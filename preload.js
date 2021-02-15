@@ -10,3 +10,10 @@ window.addEventListener('DOMContentLoaded', () => {
     replaceText(`${type}-version`, process.versions[type])
   }
 })
+
+const { ipcRenderer } = require('electron')
+const { MyValue } = require('./shared')
+
+window['fromMain'] = ipcRenderer.sendSync('getMyValue')
+window['fromPreload'] = new MyValue(1)
+window['MyValue'] = MyValue
